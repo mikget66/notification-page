@@ -30,7 +30,7 @@ const Notification = ({data, onClick}) => {
                 )}
             </div>
             {data.img &&(
-                <img className='avatar' src={`image/${data.img}.webp`}/>
+                <img className='avatar' src={`image/${data.img}.webp`} alt={`post image`}/>
             )
 
             }
