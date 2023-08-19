@@ -7,7 +7,7 @@ const Notification = ({data, onClick}) => {
             className={data.status === "not" ? "not_read" : ""}
             onClick={onClick}
         >
-            <img className="avatar" src={`profile-pictures/avatar-${data.name}.webp`} alt="" />
+            <img className="avatar" src={`profile-pictures/avatar-${data.name}.webp`} alt={`${data.name}'s profile picture`} />
 
             <div className="message">
 
