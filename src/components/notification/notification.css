@@ -1,0 +1,66 @@
+.avatar{
+    width: 50px;
+}
+.name{
+    font-weight: bold;
+    color: black;
+}
+article{
+    margin: 15px 30px;
+    display: grid;
+    grid-template-columns:  1fr 9fr 1fr;
+    padding: .5rem;
+}
+
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.message{
+    margin: .5rem;
+    color: #9b9b9b;
+}
+
+.time{
+    display: block;
+}
+
+.not_read{
+    background: rgb(233, 243, 255);
+    border-radius: 10px;
+}
+.link{
+    color:#3e52a3;
+    font-weight: bold;
+}
+.post{
+    color: #5e5e5e;
+}
+.red{
+    position: absolute;
+    margin:  5px;
+    color: red;
+    background-color: red;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.name,
+.link,
+.post,
+.content,
+.button
+{
+    cursor: pointer;
+}
+.name:hover{
+    color: #3e52a3;
+}
