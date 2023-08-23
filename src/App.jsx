@@ -1,11 +1,20 @@
 import './App.css'
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import data from './data.json';
 import Notification from './components/notification/Notification';
 
+
+
+export const Usercontext = createContext()
+
 function App() {
 
+
+
   const [notificationData, setNotificationData] = useState(data);
+
+
+  
   const handleNotificationClick = (index) => {
     const updatedData = [...notificationData];
     updatedData[index].status = 'read'; // Update the status to 'read' or any other value as needed
@@ -34,13 +43,14 @@ function App() {
         </div>
 
         <div className="notifications">
-        {notificationData.map((notification, index) => (
-        <Notification
-          key={index}
-          data={notification}
-          onClick={() => handleNotificationClick(index)}
-        />
-      ))}
+          {notificationData.map((notification, index) => (
+            <Usercontext.Provider value={notification}>
+              <Notification
+                key={index}
+                onClick={() => handleNotificationClick(index)}
+              />
+            </Usercontext.Provider>
+          ))}
         </div>
       </main>
       <div class="attribution">

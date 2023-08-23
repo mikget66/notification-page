@@ -1,36 +1,41 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './notification.css'
+import { Usercontext } from '../../App'
 
-const Notification = ({data, onClick}) => {
+const Notification = ({ onClick}) => {
+
+    const user =useContext(Usercontext);
+    
+
     return (
         <article 
-            className={data.status === "not" ? "not_read" : ""}
+            className={user.status === "not" ? "not_read" : ""}
             onClick={onClick}
         >
-            <img className="avatar" src={`profile-pictures/avatar-${data.name}.webp`} alt={`${data.name}'s profile picture`} />
+            <img className="avatar" src={`profile-pictures/avatar-${user.name}.webp`} alt={`${user.name}'s profile picture`} />
 
             <div className="message">
 
                 <p>
-                    <span className="name">{`${data.name} `}</span>
-                    {`${data.msg} `}
-                    <span className='link'>{data.link}</span>
-                    <span className='post'>{data.post}</span>
-                    {data.status === "not" && (
+                    <span className="name">{`${user.name} `}</span>
+                    {`${user.msg} `}
+                    <span className='link'>{user.link}</span>
+                    <span className='post'>{user.post}</span>
+                    {user.status === "not" && (
                     
                        <span className="red"></span>
                     
                 )}
                 </p>
-                <span className="time">{data.date}</span>
-                {data.dm && (
+                <span className="time">{user.date}</span>
+                {user.dm && (
                     <div className="content">
-                        {data.dm}
+                        {user.dm}
                     </div>
                 )}
             </div>
-            {data.img &&(
-                <img className='avatar' src={`image/${data.img}.webp`} alt={`post image`}/>
+            {user.img &&(
+                <img className='avatar' src={`image/${user.img}.webp`} alt={`post image`}/>
             )
 
             }
